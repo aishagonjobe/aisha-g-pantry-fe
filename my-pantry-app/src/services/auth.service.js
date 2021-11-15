@@ -1,7 +1,7 @@
 import config from "../config";
 
 export function registerUser(credentials) {
-    return fetch(`${config.userAPI} + /create`, {
+    return fetch(`${config.usersAPI} + /create`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -11,7 +11,7 @@ export function registerUser(credentials) {
 }
 
 export function requestLogin(credentials) {
-    return fetch(`${config.userAPI}/login`, {
+    return fetch(`${config.usersAPI}/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ export function requestLogin(credentials) {
 }
 
 export function requestUser(token, user) {
-    return fetch(`${config.userAPI}/user-settings/ + ${user.id}`, {
+    return fetch(`${config.usersAPI}/user-settings/ + ${user.id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export function requestUser(token, user) {
 }
 
 export function updateUser(token, user) {
-    return fetch(`${config.userAPI} + /update/ + ${user.id}`, {
+    return fetch(`${config.usersAPI} + /update/ + ${user.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export function updateUser(token, user) {
 }
 
 export function deleteUser(token, user) {
-    return fetch(`${config.userAPI} + /delete/ + ${user.id}`, {
+    return fetch(`${config.usersAPI} + /delete/ + ${user.id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

@@ -4,7 +4,6 @@ import {Provider} from 'react-redux';
 import {applyMiddleware, combineReducers, createStore} from 'redux'
 import logger from 'redux-logger';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css';
 import App from './App';
 import auth from "./modules/auth.module"
 import pantry from "./modules/pantry.module"

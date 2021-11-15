@@ -1,22 +1,18 @@
 import {Button, Container, FloatingLabel, Form, Tab, Tabs} from "react-bootstrap";
 import {useState} from "react";
-import {useDispatch} from "react-redux";
 
 function AccountSettings({
                              handleUpdateUser,
-                             updatePending,
-                             updateFailure,
-                             updateUserPending,
-                             updateUserFailure
+                             // updatePending,
+                             // updateFailure,
+                             // updateUserPending,
+                             // updateUserFailure
                          }) {
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [LoginShow, setLoginShow] = useState(false);
-    const handleLoginShow = () => setLoginShow(true);
-    const dispatch = useDispatch();
 
     function updateUser(event) {
         event.preventDefault();

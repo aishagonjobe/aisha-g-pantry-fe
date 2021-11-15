@@ -1,24 +1,22 @@
 import '../../css/auth.css';
 import {Button, FloatingLabel, Form} from 'react-bootstrap'
 import {useState} from "react";
-import {useDispatch} from "react-redux";
 
 
 function Register({
                       handleLogin,
                       handleCreateUser,
-                      loginPending,
-                      loginFailure,
-                      createUserPending,
-                      createUserFailed
+                      // loginPending,
+                      // loginFailure,
+                      // createUserPending,
+                      // createUserFailed
                   }) {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [LoginShow, setLoginShow] = useState(false);
-    const handleLoginShow = () => setLoginShow(true);
-    const dispatch = useDispatch();
+    // const handleRegisterShow = () => setRegisterShow(true);
+    // const handleLoginShow = () => setLoginShow(true);
 
     function registerUser(event) {
         event.preventDefault();
@@ -44,6 +42,7 @@ function Register({
     return (
         <>
             {/*<Register show={RegisterShow} handleClose={handleRegisterClose}/>*/}
+            <span className="txt2"><Button variant="link">New User? Sign up</Button></span>
             <div className="limiter">
                 <div className="container-login">
                     <div className="wrap-login">
@@ -69,7 +68,7 @@ function Register({
                                 <Button className="login-form-btn" onClick={registerUser}>Register</Button>
                             </div>
                             <div className="text-center">
-                                <span className="txt2"><Button variant="link" onClick={handleLoginShow}>Have an account? Sign in</Button></span>
+                                <span className="txt2"><Button variant="link">Have an account? Sign in</Button></span>
                             </div>
                         </Form>
                         <div className="login-more"/>

@@ -1,7 +1,6 @@
 import '../../css/auth.css';
 import {Button, FloatingLabel, Form} from 'react-bootstrap'
 import {useState} from "react";
-import {useDispatch} from "react-redux";
 
 
 function Login({
@@ -14,14 +13,14 @@ function Login({
                }) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [RegisterShow, setRegisterShow] = useState(false);
-    const handleRegisterClose = () => setRegisterShow(false);
-    const handleRegisterShow = () => setRegisterShow(true);
-    const dispatch = useDispatch();
+    // const [RegisterShow, setRegisterShow] = useState(false);
+    // const [LoginShow, setLoginShow] = useState(false);
+    // const handleLoginClose = () => setLoginShow(false);
+
 
     function handleLogin(event) {
         event.preventDefault();
-        handleLoginRequest(username, password);
+        handleLoginRequest({username, password});
     }
 
     function onUsernameChange(event) {
@@ -34,11 +33,10 @@ function Login({
 
     return (
         <>
-            {/*<Register show={RegisterShow} handleClose={handleRegisterClose}/>*/}
             <div className="limiter">
                 <div className="container-login">
                     <div className="wrap-login">
-                        <Form className="login-form" onSubmit={handleLogin}>
+                        <Form className="login-form">
                             <span className="login-form-title">Please Login</span>
                             <FloatingLabel
                                 controlId="floatingInput"
@@ -53,12 +51,12 @@ function Login({
                                               onChange={onPasswordChange}/>
                             </FloatingLabel>
                             <div className="container-login-form-btn">
-                                <Button className="login-form-btn">Login</Button>
+                                <Button className="login-form-btn" onClick={handleLogin}>Login</Button>
                             </div>
                             <div className="text-center">
-                                <span className="txt2"><Button variant="link" onClick={handleRegisterShow}>New User? Sign up</Button></span>
                             </div>
                         </Form>
+                        {/*<Register className="login-form" registerShow={RegisterShow} onClick={handleLoginClose}/>*/}
                         <div className="login-more"/>
                     </div>
                 </div>
